@@ -1,0 +1,7 @@
+aab.baidu.com                 	180.97.93.88
+acct.baidu.com                	10.141.80.143
+act.baidu.com                 	180.101.49.192
+adq.baidu.com                 	10.46.11.156
+afd.baidu.com                 	14.215.177.141
+aida.baidu.com                	180.149.144.155
+alarm.baidu.com               	106.120.159.95

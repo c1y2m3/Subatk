@@ -1,0 +1,7 @@
+ad.baidu.com                  	182.61.62.50
+aib.baidu.com                 	220.181.33.211
+aka.baidu.com                 	180.149.144.181
+allen.baidu.com               	10.42.4.219, 10.57.8.26
+2014.baidu.com                	180.101.49.131, 180.97.33.136
+01.baidu.com                  	180.101.212.65, 180.101.49.147
+anakin.baidu.com              	14.215.177.128

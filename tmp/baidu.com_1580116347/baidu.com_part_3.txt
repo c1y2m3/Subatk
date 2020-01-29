@@ -1,0 +1,3 @@
+ag.baidu.com                  	202.108.23.198, 202.108.23.199
+aic.baidu.com                 	10.26.5.60
+agile.baidu.com               	10.42.7.95

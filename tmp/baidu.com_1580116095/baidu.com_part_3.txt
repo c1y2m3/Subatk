@@ -1,0 +1,9 @@
+123.baidu.com                 	14.215.177.38, 14.215.177.39
+activity.baidu.com            	180.101.49.192
+agile.baidu.com               	10.42.7.95
+ag.baidu.com                  	202.108.23.198, 202.108.23.199
+aic.baidu.com                 	10.26.5.60
+ala.baidu.com                 	180.97.104.167, 180.97.34.146
+amd.baidu.com                 	10.65.3.121
+amis.baidu.com                	10.169.42.23, 10.26.3.239, 10.26.3.240
+0.baidu.com                   	180.149.144.203

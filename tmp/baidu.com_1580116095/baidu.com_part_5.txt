@@ -1,0 +1,7 @@
+ads.baidu.com                 	10.42.4.225
+access.baidu.com              	10.94.49.39
+aladdin.baidu.com             	14.215.178.31, 14.215.178.33
+alexa.baidu.com               	10.46.139.63
+als.baidu.com                 	14.215.177.141
+ame.baidu.com                 	10.26.3.240, 10.46.7.36, 10.91.160.44
+amoeba.baidu.com              	10.91.161.105

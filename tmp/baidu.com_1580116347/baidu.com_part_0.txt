@@ -1,0 +1,4 @@
+360.baidu.com                 	10.57.8.123
+adm.baidu.com                 	106.120.159.105
+alert.baidu.com               	106.120.159.95
+aloha.baidu.com               	180.97.104.234

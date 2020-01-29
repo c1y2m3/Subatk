@@ -1,0 +1,4 @@
+2012.baidu.com                	180.101.49.131, 180.97.33.136
+access.baidu.com              	10.94.49.39
+aladdin.baidu.com             	14.215.178.31, 14.215.178.33
+alexa.baidu.com               	10.46.139.63

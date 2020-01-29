@@ -1,0 +1,6 @@
+adq.baidu.com                 	10.46.11.156
+act.baidu.com                 	180.101.49.192
+aida.baidu.com                	180.149.144.155
+alarm.baidu.com               	106.120.159.95
+amp.baidu.com                 	10.26.5.60, 10.50.14.165
+3g.baidu.com                  	14.215.178.36, 14.215.178.37
