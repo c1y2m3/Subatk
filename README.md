@@ -14,9 +14,8 @@
 3、集成lijiejie前辈的subDomainsBrute子域名爆破,优化协程兼容本程序。
 
 4、对获取的子域名提取网页标题，添加masscan对获取子域名进行端口扫描。
-
-v1.0版本：
 ~~5、将任务结果信息进行输出并使用SSL邮件服务器进行通知(部分vps限制smtp协议)。
+v1.0版本：
 ![](http://raw.githubusercontent.com/c1y2m3/Subatk/master/doc/snapshot_1.png)
 ![](http://raw.githubusercontent.com/c1y2m3/Subatk/master/doc/snapshot.png)~~
 v1.1版本：
