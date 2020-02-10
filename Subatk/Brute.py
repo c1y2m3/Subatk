@@ -167,7 +167,7 @@ def load_dns_servers():
     # print_msg('[+] Validate DNS servers', line_feed=True)
     dns_servers = []
     pool = Pool(5)
-    for server in open('dict/dns_servers.txt').readlines():
+    for server in open(os.path.abspath('.') +'/Subatk/dict/dns_servers.txt').readlines():
         server = server.strip()
         if server and not server.startswith('#'):
             pool.apply_async(test_server, (server, dns_servers))
@@ -183,7 +183,7 @@ def load_dns_servers():
 
 def load_next_sub():
     next_subs = []
-    _file = 'dict/next_sub_full.txt'
+    _file = os.path.abspath('.') + '/Subatk/dict/next_sub_full.txt'
     with open(_file) as f:
         for line in f:
             sub = line.strip()
@@ -248,7 +248,7 @@ class SubNameBrute(object):
         regex_list = []
         lines = set()
         with open(get_sub_file_path()) as inFile:
-            for line in inFile.xreadlines():
+            for line in inFile:
                 sub = line.strip()
                 if not sub or sub in lines:
                     continue
@@ -394,11 +394,11 @@ def run_process(*params):
 def wildcard_test(domain, level=1):
     try:
         r = dns.resolver.Resolver(configure=False)
-        r.nameservers = dns_servers
+        # r.nameservers = dns_servers
         answers = r.query('lijiejie-not-existed-test.%s' % domain)
         ips = ', '.join(sorted([answer.address for answer in answers]))
         if level == 1:
-            print 'any-sub.%s\t%s' % (domain.ljust(30), ips)
+            print('any-sub.%s\t%s' % (domain.ljust(30), ips))
             wildcard_test('any-sub.%s' % domain, 2)
         elif level == 2:
             exit(0)
@@ -408,7 +408,7 @@ def wildcard_test(domain, level=1):
 
 # check file existence
 def get_sub_file_path():
-    path = 'dict/subnames_full.txt'
+    path = os.path.abspath('.') +'/Subatk/dict/subnames_full.txt'
     return path
 
 def run(host):
@@ -455,11 +455,11 @@ def run(host):
             count += 1
             time.sleep(0.3)
     except KeyboardInterrupt as e:
-        print '[ERROR] User aborted the scan!'
+        print('[ERROR] User aborted the scan!')
         for p in all_process:
             p.terminate()
     except Exception as e:
-        print '[ERROR] %s' % str(e)
+        print('[ERROR] %s' % str(e))
 
     out_file_name = get_out_file_name(domain)
     all_domains = set()
