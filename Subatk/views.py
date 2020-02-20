@@ -2,17 +2,18 @@
 
 from django.shortcuts import render
 from django.contrib import messages
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render_to_response
 from .search import *
 from django.http import HttpResponse,JsonResponse,HttpResponseRedirect,Http404
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from . import models
 from django.views.decorators.csrf import csrf_exempt
-
-
 import datetime
 
+# 全局报错页面处理
+def page_not_found(request):
+  return render_to_response('errorbase.html')
 
 # 主页展示
 class Index(View):
@@ -20,6 +21,7 @@ class Index(View):
   def get(self, request):
     messages = models.Message.objects.all()
     return render(request, "index.html",{'messages' : messages})
+    # return redirect('/knife/login/')
 
 # 添加扫描任务
 class Add(View):
@@ -47,12 +49,11 @@ class TaskDel(View):
         return redirect('/index/')
       return Http404('资源不存在 {}'.format(task_id))
 
-
 # 开始任务
 class TaskShow(View):
 
   @csrf_exempt
-  def post(self, request):
+  def post(self, request, **kwargs):
     taskid = (request.POST['taskid'])
     obj = models.Message.objects.get(id=taskid)
     if obj.result or obj.openresult:
@@ -68,6 +69,7 @@ class TaskShow(View):
       total = (Y + "[-] 捕获子域名总数 : {}".format(len(set(list(subdomains_queue)))))
       content = (set(subdomains_queue))
       print(content)
+      # publish = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
       models.Message.objects.filter(id=taskid).update(result=content)
       save = []
       import queue
@@ -86,24 +88,31 @@ class TaskShow(View):
 # 展示子域名收集结果
 class Tasktext(View):
 
-  def get(self, request, **kwargs):
+  def str_replace(self,text):
+   text = text.replace('{','').replace('}','').replace("'",'').split(',')
+   return text
 
+  def get(self, request, **kwargs):
     taskid = int(kwargs['taskid'])
     obj = models.Message.objects.get(id=taskid)
     if obj.result:
-      path = obj.result.replace('{','').replace('}','').replace("'",'').split(',')
-      return render(request, "search.html",  {'messages': path})
+      res = self.str_replace(obj.result)
+      return render(request, "search.html",  {'messages': res})
 
 
-# 实时刷新扫描结果
+# 刷新扫描结果
 class Taskopen(View):
 
-  def get(self, request, **kwargs):
+  def str_replace(self,text):
+   text = text.replace('"','').replace(']','').replace('}','').replace('[','').split('{')
+   return text
 
+  def get(self, request, **kwargs):
     taskid = int(kwargs['taskid'])
     obj = models.Message.objects.get(id=taskid)
     if obj.openresult:
-      # diff = set(obj.openresult)
-      path = obj.openresult.replace('"','').replace(']','').replace('}','').replace('[','').split('{')
-      return render(request, "search.html", {'messages': path})
+      res = self.str_replace(obj.openresult)
+      return render(request, "search.html", {'messages': res})
+
+
 

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from Subatk.views import Index,Add,TaskDel,TaskShow,Tasktext,Taskopen
+from Subatk.views import Index,Add,TaskDel,TaskShow,Tasktext,Taskopen,page_not_found
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^index/',Index.as_view()),
@@ -26,3 +26,6 @@ urlpatterns = [
     url(r'^task/cmd/(?P<taskid>\d+)/$', Tasktext.as_view()),
     url(r'^task/open/(?P<taskid>\d+)/$', Taskopen.as_view()),
 ]
+
+handler404 = page_not_found
+handler500 = page_not_found
