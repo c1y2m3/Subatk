@@ -17,13 +17,6 @@
 
 ~~5、将任务结果信息进行输出并使用SSL邮件服务器进行通知(部分vps限制smtp协议)。
 
-v1.0版本：
-![](http://raw.githubusercontent.com/c1y2m3/Subatk/master/doc/snapshot_1.png)
-![](http://raw.githubusercontent.com/c1y2m3/Subatk/master/doc/snapshot.png)~~
-v1.1版本：
-![](http://raw.githubusercontent.com/c1y2m3/Subatk/master/doc/cmd.png)
-![](http://raw.githubusercontent.com/c1y2m3/Subatk/master/doc/cmd1.png)
-![](http://raw.githubusercontent.com/c1y2m3/Subatk/master/doc/cmd2.png)
 
 ### 安装使用：
 ### centos系统下环境配置：
